@@ -724,8 +724,8 @@ Item {
       historyIndex = Math.min(engine.pastQueries.length - 1, historyIndex + 1)
       field.text = engine.pastQueries[historyIndex]
       field.selectAll()
-    } else if (key === Qt.Key_Down) select(1)
-    else if (key === Qt.Key_Up) select(-1)
+    } else if (key === Qt.Key_Down || (ctrl && key === Qt.Key_N)) select(1)
+    else if (key === Qt.Key_Up || (ctrl && key === Qt.Key_P)) select(-1)
     else if (key === Qt.Key_PageDown) select(gridView ? gridMetrics.columns * 3 : 6)
     else if (key === Qt.Key_PageUp) select(gridView ? -gridMetrics.columns * 3 : -6)
     else if (key === Qt.Key_Tab) select(1)
