@@ -36,19 +36,6 @@ function providerChoices(query) {
   }).map(function(id) { return { id: id, name: ENGINES[id].name } })
 }
 
-function providerMark(id) {
-  var marks = {
-    google: { letter: "G", color: "#4285f4" },
-    duckduckgo: { letter: "D", color: "#de5833" },
-    bing: { letter: "b", color: "#008373" },
-    brave: { letter: "B", color: "#fb542b" },
-    kagi: { letter: "K", color: "#7655d9" },
-    startpage: { letter: "S", color: "#5366d6" },
-    ecosia: { letter: "E", color: "#3a913f" }
-  }
-  return Object.prototype.hasOwnProperty.call(marks, id) ? marks[id] : { letter: "?", color: "#0a84ff" }
-}
-
 function isProviderCommand(query) {
   return /^\s*@/.test(String(query || ""))
 }

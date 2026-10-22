@@ -1293,17 +1293,15 @@ Item {
       row.action = "Copy"
       row.copyable = true
     } else if (c.source === "provider") {
-      var providerMark = Web.providerMark(c.providerId)
-      row.glyph = providerMark.letter
-      row.badge = providerMark.color
+      row.iconType = "image"
+      row.iconSource = Qt.resolvedUrl("providers/" + c.providerId + ".svg").toString()
       row.subtitle = c.subtitle
       row.action = "Choose"
     } else if (c.source === "web") {
       if (c.address) row.symbol = "compass"
       else {
-        var webMark = Web.providerMark(c.providerId || settings.webEngine)
-        row.glyph = webMark.letter
-        row.badge = webMark.color
+        row.iconType = "image"
+        row.iconSource = Qt.resolvedUrl("providers/" + (c.providerId || settings.webEngine) + ".svg").toString()
       }
       row.subtitle = c.subtitle
       row.action = c.address ? "Open" : "Search"

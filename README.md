@@ -29,7 +29,7 @@ as you type. Twelve distinct styles, and every one fully customizable.
   `10 km to mi`, `72°F`, `1 gb in mib`, `255 to hex`. Return copies the answer.
 * **Choose a web search as you type.** Type `@` to pick a provider, or narrow
   the list with `@g`, `@bi` and similar prefixes. Choosing one inserts `@google`
-  (or the provider you chose); its mark appears beside the field. Type a query
+  (or the provider you chose); its logo appears beside the field. Type a query
   and Return searches it in your default browser. Only the provider token
   takes the theme accent. Local
   results are hidden while the provider command is active, and earlier searches

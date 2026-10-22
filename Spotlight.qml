@@ -991,7 +991,7 @@ Item {
                 readonly property var info: root.modeInfo(root.mode)
                 readonly property bool canGoBack: !!info && leadingMouse.containsMouse
                 readonly property var providerSearch: root.providerPrefixActive ? Web.parseProviderQuery(root.field.text) : null
-                readonly property var providerMark: providerSearch ? Web.providerMark(providerSearch.id) : null
+                readonly property string providerIcon: providerSearch ? Qt.resolvedUrl("providers/" + providerSearch.id + ".svg").toString() : ""
 
                 Rectangle {
                   anchors.fill: parent
@@ -999,23 +999,17 @@ Item {
                   color: root.controlHover
                   visible: leading.canGoBack
                 }
-                Rectangle {
-                  anchors.centerIn: parent
-                  width: 26
-                  height: 26
-                  radius: 8
-                  visible: !!leading.providerSearch
-                  color: leading.providerMark ? leading.providerMark.color : "transparent"
-                }
-                Text {
+                Image {
                   anchors.centerIn: parent
                   visible: !!leading.providerSearch
-                  text: leading.providerMark ? leading.providerMark.letter : ""
-                  textFormat: Text.PlainText
-                  color: "white"
-                  font.family: root.uiFont
-                  font.pixelSize: 17
-                  font.weight: Font.Bold
+                  width: 23
+                  height: 23
+                  source: leading.providerIcon
+                  sourceSize.width: 46
+                  sourceSize.height: 46
+                  fillMode: Image.PreserveAspectFit
+                  smooth: true
+                  mipmap: true
                 }
                 Icon {
                   anchors.centerIn: parent
